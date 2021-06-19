@@ -22,12 +22,6 @@ export class ProductComponent implements OnInit {
 
     private discountTimeInSeconds = 60;
 
-    constructor(private applicationRef: ApplicationRef) {
-        setTimeout(() => {
-            this.applicationRef.tick();
-        }, 1000);
-    }
-
     ngOnInit(): void {
         this.remainingDiscountSeconds$ = timer(0, 1000).pipe(
             map((i) => this.discountTimeInSeconds - i),
