@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -12,6 +13,7 @@ import { productsReducer } from './state/products/products.reducer';
 import { cartItemsReducer } from './state/cart-items/cart-items.reducer';
 import { BaseModule } from './base/base.module';
 import { environment } from './../environments/environment';
+import { ProductsEffects } from './effects/products.effects';
 
 @NgModule({
     declarations: [
@@ -28,7 +30,8 @@ import { environment } from './../environments/environment';
             productsState: productsReducer,
             cartItemsState: cartItemsReducer
         }),
-        StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production})
+        StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production}),
+        EffectsModule.forRoot([ProductsEffects])
     ],
     providers: [],
     bootstrap: [AppComponent],
