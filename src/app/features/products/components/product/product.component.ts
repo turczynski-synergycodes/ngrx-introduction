@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy } from '@angular/core';
+import { ApplicationRef, ChangeDetectionStrategy } from '@angular/core';
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Observable, timer } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';
@@ -21,6 +21,12 @@ export class ProductComponent implements OnInit {
     remainingDiscountSeconds$: Observable<number>;
 
     private discountTimeInSeconds = 60;
+
+    constructor(private applicationRef: ApplicationRef) {
+        setTimeout(() => {
+            this.applicationRef.tick();
+        }, 1000);
+    }
 
     ngOnInit(): void {
         this.remainingDiscountSeconds$ = timer(0, 1000).pipe(
