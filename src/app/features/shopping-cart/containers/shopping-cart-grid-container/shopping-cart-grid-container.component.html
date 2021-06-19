@@ -1,0 +1,6 @@
+<app-shopping-cart-grid
+    [cartItems]="cartItems$ | async"
+    (removeCartItem)="removeCartItem($event)"
+    (increaseCartItemQuantity)="increaseCartItemQuantity($event)"
+    (decreaseCartItemQuantity)="decreaseCartItemQuantity($event)">
+</app-shopping-cart-grid>

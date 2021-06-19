@@ -1,0 +1,15 @@
+<mat-card class="product-card" (click)="navigateToProduct()">
+    <div class="product-card__img">
+        <img mat-card-image [src]="'assets/img/' + product.img"/>
+    </div>
+
+    <div class="product-card__brand">{{ product.brand }}</div>
+    <div class="product-card__name">{{ product.name }}</div>
+    <div class="product-card__price">{{ product.price  | currency : 'EUR'}}</div>
+
+    <div class="product-card__add">
+        <button mat-raised-button color="primary" (click)="addToCart($event)">
+            <mat-icon>shopping_cart</mat-icon>
+        </button>        
+    </div>
+</mat-card>

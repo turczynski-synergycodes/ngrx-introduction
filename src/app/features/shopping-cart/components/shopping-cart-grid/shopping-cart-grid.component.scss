@@ -1,0 +1,56 @@
+.shopping-cart-grid {
+    table {
+        width: 100%;
+
+        th {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+
+    &__product {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        img {
+            height: 60px;
+        }
+
+        &--brand {
+            text-transform: uppercase;
+        }
+    
+        &--name {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+
+    &__quantity {
+        display: flex;
+        align-items: center;
+
+        &--value {
+            min-width: 30px;
+        }
+
+        &--actions {
+            display: flex;
+            flex-direction: column;
+
+            mat-icon {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__total {
+        display: flex;
+        align-items: center;
+
+        &--value {
+            min-width: 80px;
+        }
+    }
+}

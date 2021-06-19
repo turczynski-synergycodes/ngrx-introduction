@@ -1,0 +1,23 @@
+@import '../../../../base/styles/colors';
+
+.shopping-cart-summary {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+
+    &__total {        
+        margin-top: 30px;
+        display: flex;
+        column-gap: 50px;
+        font-weight: bold;
+        font-size: 20px;
+
+        &--value {
+            color: $blue;
+        }
+    }
+
+    &__checkout {
+        margin-top: 20px;
+    }
+}

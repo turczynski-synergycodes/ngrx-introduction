@@ -1,0 +1,10 @@
+<div class="shopping-cart-summary">
+    <div class="shopping-cart-summary__total">
+        <span>ORDER TOTAL</span>
+        <span class="shopping-cart-summary__total--value">{{ orderTotal | currency: 'EUR' }}</span>
+    </div>
+
+    <div class="shopping-cart-summary__checkout">
+        <button mat-raised-button color="primary" routerLink="/checkout">CHECKOUT</button>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+@import './base/styles/buttonLink';
+@import './base/styles/colors';
+
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    &__toolbar {
+        position: sticky;
+        top: 0px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        background-color: $blue;
+        color: white;
+        font-weight: 600;
+        z-index: 5000;
+
+        &__spacer {
+            flex: 1;
+        }
+
+        &__cart {
+            margin-right: 20px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin: 20px auto 20px;
+        width: 100%;
+        max-width: 960px;
+        z-index: 1000;
+    }
+}

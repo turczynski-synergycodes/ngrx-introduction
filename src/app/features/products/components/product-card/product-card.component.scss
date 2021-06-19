@@ -1,0 +1,52 @@
+@import '../../../../base/styles/colors';
+
+.product-card {
+    height: 300px;
+    overflow: hidden;
+
+    &__brand {
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+
+    &__name {
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: bold
+    }
+
+    &__price {
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $blue;
+        margin-top: 10px;
+    }
+
+    &__add {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+
+        :hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            height: 180px;
+            width: auto;
+        }
+    }
+}
+
+.product-card:hover {
+    -webkit-box-shadow: 0px 2px 8px 1px rgb(0 0 0 / 25%);
+    box-shadow: 0px 2px 8px 1px rgb(0 0 0 / 25%);
+    cursor: pointer;
+} 

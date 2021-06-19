@@ -1,0 +1,51 @@
+@import '../../../../base/styles/colors';
+
+.product {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 20px;
+
+    &__details {
+        &__brand {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        &__name {
+            margin-top: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        &__description {
+            margin-top: 10px;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        &__price {
+            margin-top: 20px;
+            color: $blue;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        &__discount {
+            margin-top: 10px;
+            font-size: 18px;
+
+            &--time {
+                color: $blue;
+                font-weight: bold;
+                font-size: 22px;
+            }
+        }
+
+        &__add-button {
+            margin-top: 20px;
+        }
+    }
+}
