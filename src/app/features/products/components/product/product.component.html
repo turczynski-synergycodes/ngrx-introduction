@@ -12,7 +12,7 @@
         <div class="product__details__price">
             {{ product.price | currency: 'EUR'}}
         </div>
-        <div class="product__details__discount" *ngIf="remainingDiscountSeconds$ | ngrxPush as remainingSeconds">
+        <div class="product__details__discount" *ngrxLet="remainingDiscountSeconds$ as remainingSeconds">
             If you add the product to your cart in 
             <span class="product__details__discount--time">{{ remainingSeconds }}</span>
             seconds, you will get extra discount!
