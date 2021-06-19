@@ -13,12 +13,14 @@ import { ProductsGridContainerService } from './products-grid-container.service'
 export class ProductsGridContainerComponent implements OnInit {
 
     products$: Observable<Product[]>;
+    productsCount$: Observable<number>;
 
     constructor(private service: ProductsGridContainerService) {}
 
     ngOnInit(): void {
         this.service.feedProducts();
         this.products$ = this.service.getProducts();
+        this.productsCount$ = this.service.getProductsCount();
     }
 
     addProductToCart(product: Product): void {

@@ -6,6 +6,7 @@ import { Product } from '../../../../base/models/product.interface';
 import { addProductToCart } from '../../../../state/cart-items/cart-items.actions';
 import { retrievedProductList } from '../../../../state/products/products.actions';
 import { selectProducts } from '../../../../state/products/products.selectors';
+import { selectProductsCount } from './../../../../state/products/products.selectors';
 
 @Injectable()
 export class ProductsGridContainerService {
@@ -18,6 +19,10 @@ export class ProductsGridContainerService {
     getProducts(): Observable<Product[]> {
         return this.store.pipe(select(selectProducts));
     }
+
+    getProductsCount(): Observable<number> {
+        return this.store.pipe(select(selectProductsCount));
+    };
 
     feedProducts(): void {
         this.httpService.getProducts()

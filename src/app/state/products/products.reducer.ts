@@ -3,11 +3,13 @@ import { Product } from '../../base/models/product.interface';
 import { retrievedProductList } from './products.actions';
 
 export interface ProductsStateModel {
-    products: Product[]
+    products: Product[],
+    productsCount: number
 }
 
 export const initialState: ProductsStateModel = {
-    products: []
+    products: [],
+    productsCount: 0
 };
 
 export const productsReducer = createReducer(
@@ -16,5 +18,9 @@ export const productsReducer = createReducer(
 );
 
 const onRetrievedProductList = (state: ProductsStateModel, products: Product[]): ProductsStateModel => {
-    return {...state, products };
+    return {
+        ...state, 
+        products,
+        productsCount: products.length
+    };
 }

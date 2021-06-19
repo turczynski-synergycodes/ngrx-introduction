@@ -6,3 +6,8 @@ export const selectProducts = createSelector(
     (state: AppStateModel) => state.productsState.products,
     ((products: Product[]) => products)
 );
+
+export const selectProductsCount = createSelector(
+    (state: AppStateModel) => state.productsState.productsCount,
+    ((productsCount: number) => productsCount)
+);
