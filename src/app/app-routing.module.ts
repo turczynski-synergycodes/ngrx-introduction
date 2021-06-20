@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundPageComponent } from './base/pages/not-found/not-found-page.component';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 const routes: Routes = [
     {
@@ -27,6 +28,7 @@ const routes: Routes = [
 @NgModule({
     imports: [
         RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
+        StoreRouterConnectingModule.forRoot()
     ],
     exports: [RouterModule],
 })
